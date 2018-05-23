@@ -1,0 +1,12 @@
+{
+  "name": "comp-image-set",
+  "version": "1.0.0",
+  "description": "",
+  "main": "comp-image-set.js",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@code.vipkid.com.cn:3590/lingobus-fe/games/library/comp-image-set.git"
+  },
+  "author": "wangweihua@vipkid.com.cn",
+  "license": "ISC"
+}
