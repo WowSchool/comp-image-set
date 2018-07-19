@@ -2,6 +2,10 @@ cc.Class({
   name: 'ImageSet',
   extends: cc.Component,
   properties: {
+    srcBlendFactor: {
+      type: cc.BlendFunc.BlendFactor,
+      default: cc.BlendFunc.BlendFactor.ONE
+    },
     list: {
       type: cc.SpriteFrame,
       default: []
@@ -22,6 +26,7 @@ cc.Class({
       const n = new cc.Node(`imageset-${i}`);
       const sprite = n.addComponent(cc.Sprite);
       sprite.spriteFrame = frame;
+      sprite.srcBlendFactor = this.srcBlendFactor;
       this.node.addChild(n);
       n.active = false;
       n.width = root.width;
@@ -38,7 +43,7 @@ cc.Class({
       n.addComponent(compInstances);
     }
   },
-  showAt(indices, hideOthers = false) {
+  showAt(indices, hideOthers = true) {
     if (hideOthers) {
       this.nodes.forEach(it => it.active = false);
     }
